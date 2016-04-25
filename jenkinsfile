@@ -5,7 +5,7 @@ node {
   git 'https://github.com/timhennessey7/se411-qotd'
   
   def gradleHome = tool = 'Graddle 2.11'
-  bat ${gradleHome}\\bin\\gradle.bat assemble uploadArchives"
+  bat "${gradleHome}\\bin\\gradle.bat assemble uploadArchives"
   
   step ([$class: 'ArtifactArchiver', artifacts: '**/*.war',
     fingerprint: true])
